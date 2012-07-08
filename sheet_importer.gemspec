@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/ext/google_drive.rb",
     "lib/sheet_importer.rb",
+    "sheet_importer.gemspec",
     "test/helper.rb",
     "test/test_sheet_importer.rb"
   ]

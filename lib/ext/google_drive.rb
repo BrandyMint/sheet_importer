@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 #
 module GoogleDrive
-  debugger
-  cattr_accessor :email, :password
+  mattr_accessor :email, :password
 
   def self.open key
-    @last_session = login (email || Settings.google_spreadsheet.email), (password || Settings.google_spreadsheet.password)
+    @last_session = login email, password
     @last_session.spreadsheet_by_key key
   end
 
