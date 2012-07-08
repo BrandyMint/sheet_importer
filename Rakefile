@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/dapi/sheet_importer"
   gem.license = "MIT"
   gem.summary = %Q{Помощник в импорте таблиц (gdoc)}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.description = %Q{Помощник в импорте таблиц (gdoc)}
   gem.email = "danil@orionet.ru"
   gem.authors = ["Danil Pismenny"]
   # dependencies defined in Gemfile
