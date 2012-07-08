@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Danil Pismenny"]
   s.date = "2012-07-08"
-  s.description = "TODO: longer description of your gem"
+  s.description = "\u{41f}\u{43e}\u{43c}\u{43e}\u{449}\u{43d}\u{438}\u{43a} \u{432} \u{438}\u{43c}\u{43f}\u{43e}\u{440}\u{442}\u{435} \u{442}\u{430}\u{431}\u{43b}\u{438}\u{446} (gdoc)"
   s.email = "danil@orionet.ru"
   s.extra_rdoc_files = [
     "LICENSE.txt",
