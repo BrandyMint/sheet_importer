@@ -18,7 +18,7 @@ module GoogleDrive
   class SuperRow
     attr_accessor :config, :row_num, :groups
 
-    delegate :params_h, :ws, :to => :config
+    delegate :columns, :params_h, :ws, :to => :config
 
     def initialize _config, _row_num
       self.config = _config
@@ -101,6 +101,10 @@ module GoogleDrive
 
     def super_row row_num
       row_class.new self, row_num
+    end
+
+    def columns
+      params_h.keys.map &:to_sym
     end
 
     def each_content_row &block
