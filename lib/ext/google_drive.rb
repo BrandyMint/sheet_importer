@@ -65,7 +65,7 @@ module GoogleDrive
     def set key, value
       key = key.join(':') if key.is_a? Array
 
-      ws[ row_num, params_h[key] ] = value
+      ws[ row_num, params_h[key.to_s] ] = value
     end
 
     def after_init
