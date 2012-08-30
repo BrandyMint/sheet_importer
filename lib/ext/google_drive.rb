@@ -18,7 +18,7 @@ module GoogleDrive
   class SuperRow
     attr_accessor :config, :row_num, :groups
 
-    delegate :columns, :params_h, :ws, :to => :config
+    delegate :columns, :params_h, :ws, :get_column_num_by_key, :to => :config
 
     def initialize _config, _row_num
       self.config = _config
@@ -33,7 +33,7 @@ module GoogleDrive
 
           groups[group][name] = {
             :row => row_num,
-            :col => config.params_h[key]
+            :col => get_column_num_by_key(key)
           }
 
         else
@@ -57,7 +57,7 @@ module GoogleDrive
 
       raise "No such column name '#{key}'" unless params_h.has_key? key
 
-      value = ws[ row_num, params_h[key] ]
+      value = ws[ row_num, get_column_num_by_key(key) ]
 
       config.opts.strip_values ? value.strip : value
     end
@@ -65,7 +65,7 @@ module GoogleDrive
     def set key, value
       key = key.join(':') if key.is_a? Array
 
-      ws[ row_num, params_h[key.to_s] ] = value
+      ws[ row_num, get_column_num_by_key(key) ] = value
     end
 
     def after_init
@@ -101,6 +101,13 @@ module GoogleDrive
 
     def super_row row_num
       row_class.new self, row_num
+    end
+
+    def get_column_name_by_key key
+       num = params_h[key.to_s]
+       raise "Не знаю такой колонки (#{key}), есть только такие: #{params_h.keys.join(', ')}" unless num
+
+       num
     end
 
     def columns
