@@ -103,7 +103,7 @@ module GoogleDrive
       row_class.new self, row_num
     end
 
-    def get_column_name_by_key key
+    def get_column_num_by_key key
        num = params_h[key.to_s]
        raise "Не знаю такой колонки (#{key}), есть только такие: #{params_h.keys.join(', ')}" unless num
 
