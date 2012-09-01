@@ -68,6 +68,12 @@ module GoogleDrive
       ws[ row_num, get_column_num_by_key(key) ] = value
     end
 
+    def empty!
+      (1..ws.num_cols).each do |c|
+        ws[ row_num, c ] = nil
+      end
+    end
+
     def after_init
 
     end
